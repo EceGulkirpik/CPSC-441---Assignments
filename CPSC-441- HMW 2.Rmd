@@ -2,7 +2,9 @@
 title: "CPSC 441 - HMW 2"
 author: "Ece Gulkirpik"
 date: "9/7/2020"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -26,6 +28,26 @@ y <- matrix(c(33,19), nrow=2, ncol=1)
 y
 solve(x,y)
 ```
+## OR 
+X= 19-3Y
+2(19 - 3Y) + 5Y = 33
+```{r}
+2*19
+2*3
+```
+38 - 6Y + 5Y = 33
+```{r}
+-6+5
+```
+38 - Y = 33
+```{r}
+Y = 38-33
+Y
+X = 19 - 3*Y
+X
+```
+
+
 ##2.b.Create a vector that goes from 1 to 100 and calculates the average of it WITHOUT using the R function “mean”.
 ```{r}
 A <- c(1:100)
