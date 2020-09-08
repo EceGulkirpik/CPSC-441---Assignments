@@ -1,0 +1,49 @@
+---
+title: "CPSC 441 - HMW 2"
+author: "Ece Gulkirpik"
+date: "9/7/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+##2 - Create an R Markdown document and do the following (include the R code in all of your answers):
+##2.a. show the step-by-step how to solve the following system of equations in R (Use R chunks to run each part). 
+## 2x + 5y = 33
+## x + 3y = 19
+```{r}
+x <- matrix(c(2,1,5,3), nrow=2, ncol=2)
+x
+y <- matrix(c(33,19), nrow=2, ncol=1)
+y
+solve(x,y)
+```
+##2.b.Create a vector that goes from 1 to 100 and calculates the average of it WITHOUT using the R function “mean”.
+```{r}
+A <- c(1:100)
+A
+average <- sum(A)/100
+average
+```
+##2.c.Install the package “dplyr”.
+```{r}
+install.packages("dplyr")
+```
+##3 - create a data frame of two rows with A, B, C, and D in row 1 and D, E, F, and G in row 2.
+```{r}
+ROW_1 <- c("A","B","C","D")
+ROW_1
+ROW_2 <- c("D","E","F","G")
+ROW_2
+DATA_FRAME <- rbind(ROW_1,ROW_2)
+DATA_FRAME
+```
+
