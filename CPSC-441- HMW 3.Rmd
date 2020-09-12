@@ -1,0 +1,55 @@
+---
+title: "Homework_3"
+author: "Ece Gulkirpik"
+date: "9/11/2020"
+output: html_document
+---
+
+#1.Write a function to calculate the mean.
+```{r}
+x <- 1:100
+x
+mean_x <- function(x){
+  S <- sum(x)
+  L <- length(x)
+  Mean_value <- S/L
+  return(Mean_value)
+}
+```
+
+# Download the following dataset and use it for questions 2-4: https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/key_crop_yields.csv 
+```{r}
+key_crop_yields <- read.csv(url("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/key_crop_yields.csv"))
+key_crop_yields
+```
+
+#2.The range (first and last) of the variable Year.
+```{r}
+#range = largest value - smallest value
+key_crop_yields <- read.csv(url("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/key_crop_yields.csv"))
+L <- max(key_crop_yields$Year)
+S <- min(key_crop_yields$Year)
+range_year <- function(L,S){
+  R <- L-S
+  return(R)
+}
+```
+
+#3.Using the function from #1, calculate the mean of the variable "Maize (tonnes per hectare)".  TIP: When there is missing data (NA), the functions mean, sum, and others, will result in NA. The solution to obtain the desired result is either remove all NAs or use the option na.rm = TRUE (see "?sum").
+```{r}
+#mean = sum of the values / the number of values
+mean_crop <- function(x,y){
+  x <- sum(key_crop_yields$Maize..tonnes.per.hectare., na.rm=T)
+  y <- range_year(L,S)
+  mean_maize <- x/y
+  return(mean_maize)
+}
+```
+
+#4.Save a file with the variable named "Entity"
+```{r}
+new_file <- matrix(data = key_crop_yields$Entity, ncol = 1)
+colnames(new_file) <- "Entity"
+write.csv(new_file, file= "new_file.csv")
+```
+
